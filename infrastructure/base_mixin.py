@@ -11,10 +11,10 @@ class BaseMixin:
     updated_time = Column(DateTime(timezone=True), onupdate=func.now())
     @declared_attr
     def created_user_id(cls):
-        return Column(Integer)
+        return Column(Integer,index=True)
     @declared_attr
     def updated_user_id(cls):
-        return Column(Integer)
+        return Column(Integer,index=True)
     @declared_attr
     def created_user(cls):
         return relationship('User', primaryjoin=lambda: User.id==cls.created_user_id)
