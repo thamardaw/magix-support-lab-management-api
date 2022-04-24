@@ -27,7 +27,7 @@ target_metadata = Base.metadata
 from config.config import settings
 
 # Comment this line out
-config.set_main_option("sqlalchemy.url",settings.DATABASE_URL_ALEMBIC)
+# config.set_main_option("sqlalchemy.url",settings.DATABASE_URL_ALEMBIC)
 
 # Use this
 config.set_main_option("sqlalchemy.url",settings.DATABASE_URL)
