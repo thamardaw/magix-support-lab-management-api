@@ -4,7 +4,7 @@ from typing import Optional
 
 class Test_Category(BaseModel):
     id : int
-    name : Optional[str] = None
+    name : str
     created_time: Optional[datetime] = None
     updated_time: Optional[datetime] = None
     created_user_id: Optional[int] = None

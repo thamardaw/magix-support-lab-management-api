@@ -5,7 +5,7 @@ from typing import Optional
 
 class Lab_Test(BaseModel):
     id : int
-    name : Optional[str] = None
+    name : str
     test_category_id : Optional[int] = None
     # test_category : Optional[Test_Category] = None
     created_time: Optional[datetime] = None

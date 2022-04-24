@@ -6,7 +6,7 @@ from .lab_result import Lab_Result
 
 class Lab_Report(BaseModel):
     id : int
-    patient_id : Optional[int] = None
+    patient_id : int
     doctor_name : Optional[str] = None
     sample_id : Optional[int] = None
     sample_type : Optional[str] = None
