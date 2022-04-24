@@ -5,3 +5,5 @@ from infrastructure.models.test_category import Test_Category
 from infrastructure.models.lab_test import Lab_Test
 from infrastructure.models.parameter import Parameter
 from infrastructure.models.parameter_range import Parameter_Range
+from infrastructure.models.lab_report import Lab_Report
+from infrastructure.models.lab_result import Lab_Result
