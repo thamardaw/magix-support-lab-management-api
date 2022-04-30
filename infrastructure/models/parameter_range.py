@@ -9,3 +9,6 @@ class Parameter_Range(BaseMixin,Base):
     parameter = relationship("Parameter",backref="parameter_range")
     upper_limit = Column(Integer)
     lower_limit = Column(Integer)
+    low_remark = Column(String)
+    high_remark = Column(String)
+    normal_remark = Column(String)
