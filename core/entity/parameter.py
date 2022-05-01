@@ -11,7 +11,7 @@ class Parameter(BaseModel):
     lab_test_id : Optional[int] = None
     # lab_test : Optional[Lab_Test] = None
     result_type : Optional[result_type_enum] = None
-    result_default_type : Optional[List[str]] = None
+    result_default_text : Optional[List[str]] = None
     created_time: Optional[datetime] = None
     updated_time: Optional[datetime] = None
     created_user_id: Optional[int] = None

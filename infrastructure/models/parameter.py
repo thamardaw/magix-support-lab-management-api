@@ -15,4 +15,4 @@ class Parameter(BaseMixin,Base):
     lab_test_id = Column(Integer,ForeignKey("lab_test.id"))
     lab_test = relationship("Lab_Test",backref="parameter")
     result_type = Column(Enum(result_type_enum))
-    result_default_type = (JSON)
+    result_default_text = Column(JSON)
