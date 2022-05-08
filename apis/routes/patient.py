@@ -17,21 +17,21 @@ def get_patient(id: int, repo=Depends(PatientRepository)):
     return PatientService(repo).getPatient(id)
 
 @router.post("/", status_code=status.HTTP_200_OK, response_model=Message)
-def create(request: Patient, repo=Depends(PatientRepository)):
+def create_patient(request: Patient, repo=Depends(PatientRepository)):
     PatientService(repo).createPatient(request)
     return {"detail": "Patient create successful."}
 
 @router.put("/{id}",status_code=status.HTTP_200_OK,response_model=Message)
-def update(id: int, request: Patient,repo=Depends(PatientRepository)):
+def update_patient(id: int, request: Patient,repo=Depends(PatientRepository)):
     PatientService(repo).updatePatient(id,request)
     return {"detail": "Patient update successful."}
 
 @router.delete("/{id}",status_code=status.HTTP_200_OK, response_model=Message)
-def delete(id: int, repo=Depends(PatientRepository)):
+def delete_patient(id: int, repo=Depends(PatientRepository)):
     PatientService(repo).deletePatient(id)
     return {"detail": "Patient delete successful."}
 
-@router.post("/bulk",status_code=status.HTTP_200_OK, response_model=Message)
-def bulk_delete(ids: List[int], repo=Depends(PatientRepository)):
+@router.post("/bulk_delete",status_code=status.HTTP_200_OK, response_model=Message)
+def delete_multiple_patients(ids: List[int], repo=Depends(PatientRepository)):
     PatientService(repo).deleteMulitplePatient(ids)
     return {"detail": "Patients delete successful."}
