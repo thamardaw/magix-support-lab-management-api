@@ -5,7 +5,7 @@ from infrastructure.base_mixin import BaseMixin
 from infrastructure.base_class import Base
 
 class Parameter_Range(BaseMixin,Base):
-    parameter_id = Column(Integer,ForeignKey("parameter.id"))
+    parameter_id = Column(Integer,ForeignKey("parameter.id",ondelete='CASCADE'))
     parameter = relationship("Parameter",backref="parameter_range")
     upper_limit = Column(Integer)
     lower_limit = Column(Integer)
