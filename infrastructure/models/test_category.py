@@ -6,4 +6,3 @@ from sqlalchemy.orm import relationship
 class Test_Category(BaseMixin,Base):
     name = Column(String, nullable=False)
     lab_tests = relationship("Lab_Test", backref="test_category", passive_deletes=True)
-    
