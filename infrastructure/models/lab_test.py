@@ -6,7 +6,7 @@ from infrastructure.base_class import Base
 
 class Lab_Test(BaseMixin,Base):
     name = Column(String, nullable=False)
-    test_category_id = Column(Integer,ForeignKey("test_category.id"))
-    test_category = relationship("Test_Category",backref="lab_test")
+    test_category_id = Column(Integer,ForeignKey("test_category.id",ondelete='CASCADE'))
+    test_category_ = relationship("Test_Category",backref="lab_test")
     parameters = relationship("Parameter", backref="lab_test", passive_deletes=True)
     
