@@ -8,5 +8,5 @@ class Lab_Test(BaseMixin,Base):
     name = Column(String, nullable=False)
     test_category_id = Column(Integer,ForeignKey("test_category.id"))
     test_category = relationship("Test_Category",backref="lab_test")
-    parameters = relationship("Parameter", backref="lab_Test", passive_deletes=True)
+    parameters = relationship("Parameter", backref="lab_test", passive_deletes=True)
     
