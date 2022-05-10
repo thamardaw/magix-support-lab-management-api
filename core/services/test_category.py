@@ -38,9 +38,8 @@ class TestCategoryService:
                 raise BAD_REQUEST(f"Test Category with id {id} cannot be deleted.")
         return 
 
-    def createLabTest(self,lab_test) -> None:
-        self.test_category_repo.persistLabTest(lab_test)
-        return
+    def createLabTest(self,lab_test) -> Lab_Test:
+        return self.test_category_repo.persistLabTest(lab_test)
 
     def updateLabTest(self,id:int,lab_test) -> None:
         self.test_category_repo.updateLabTest(id,lab_test)

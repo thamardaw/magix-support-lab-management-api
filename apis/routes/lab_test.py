@@ -16,10 +16,9 @@ def get_all_lab_tests(test_category_id: Optional[int] = None,repo=Depends(TestCa
 def get_lab_test(id: int, repo=Depends(TestCategoryRepository)):
     return TestCategoryService(repo).getLabTest(id)
 
-@router.post("/", status_code=status.HTTP_200_OK, response_model=Message)
+@router.post("/", status_code=status.HTTP_200_OK, response_model=Lab_TestDTO)
 def create_lab_test(request: Lab_Test, repo=Depends(TestCategoryRepository)):
-    TestCategoryService(repo).createLabTest(request)
-    return {"detail": "Lab Test create successful."}
+    return TestCategoryService(repo).createLabTest(request)
 
 @router.put("/{id}",status_code=status.HTTP_200_OK,response_model=Message)
 def update_lab_test(id: int, request: Lab_Test,repo=Depends(TestCategoryRepository)):
