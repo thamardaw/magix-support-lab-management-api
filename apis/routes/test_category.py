@@ -6,7 +6,7 @@ from core.entity.test_category import Test_Category as Test_CategoryDTO
 from typing import List
 from infrastructure.repository.test_category import TestCategoryRepository
 
-router = APIRouter(prefix="/test_categorys", tags=["Test_Categorys"])
+router = APIRouter(prefix="/test_categories", tags=["Test Categories"])
 
 @router.get('/',status_code=status.HTTP_200_OK, response_model=List[Test_CategoryDTO])
 def get_all_test_categorys(repo=Depends(TestCategoryRepository)):
