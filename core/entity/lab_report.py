@@ -12,7 +12,7 @@ class Lab_Report(BaseModel):
     sample_type : Optional[str] = None
     patient_type : Optional[str] = None
     test_date : Optional[date] = None
-    lab_results : Optional[List[Lab_Result]] = None
+    lab_results : Optional[List[Lab_Result]] = []
     created_time: Optional[datetime] = None
     updated_time: Optional[datetime] = None
     created_user_id: Optional[int] = None

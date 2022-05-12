@@ -6,7 +6,7 @@ from infrastructure.base_class import Base
 class Lab_Report(BaseMixin,Base):
     patient_id = Column(Integer,nullable=False,index=True)
     doctor_name = Column(String)
-    smaple_id = Column(Integer)
+    sample_id = Column(Integer)
     sample_type = Column(String)
     patient_type = Column(String)
     test_date = Column(Date)
