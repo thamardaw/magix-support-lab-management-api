@@ -13,9 +13,8 @@ class LabReportService:
     def getLabReport(self,id:int) -> Lab_Report:
         return self.lab_report_repo.getById(id)
     
-    def createLabReport(self,lab_report) -> None:
-        self.lab_report_repo.persist(lab_report)
-        return 
+    def createLabReport(self,lab_report) -> Lab_Report:
+        return self.lab_report_repo.persist(lab_report)
     
     def updateLabReport(self,id:int,lab_report) -> None:
         self.lab_report_repo.update(id,lab_report)

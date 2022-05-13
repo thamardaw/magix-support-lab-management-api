@@ -17,10 +17,9 @@ def get_all_lab_reports(repo=Depends(LabReportRepository)):
 def get_lab_report(id: int, repo=Depends(LabReportRepository)):
     return LabReportService(repo).getLabReport(id)
 
-@router.post("/", status_code=status.HTTP_200_OK, response_model=Message)
+@router.post("/", status_code=status.HTTP_200_OK, response_model=Lab_ReportDTO)
 def create_lab_report(request: Lab_Report, repo=Depends(LabReportRepository)):
-    LabReportService(repo).createLabReport(request)
-    return {"detail": "Lab Report create successful."}
+    return LabReportService(repo).createLabReport(request)
 
 @router.post("/result/{lab_report_id}", status_code=status.HTTP_200_OK, response_model=Message)
 def add_lab_result(lab_report_id: int,request: Lab_Result, repo=Depends(LabReportRepository)):

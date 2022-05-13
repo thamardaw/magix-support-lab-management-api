@@ -3,7 +3,7 @@ from typing import Optional
 
 class Lab_Result(BaseModel):
     parameter_name : Optional[str] = None
-    test_name : Optional[int] = None
+    test_name : Optional[str] = None
     parameter_id : Optional[int] = None
     unit : Optional[str] = None
     result : Optional[str] = None
