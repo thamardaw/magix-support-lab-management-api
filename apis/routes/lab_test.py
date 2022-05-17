@@ -8,7 +8,7 @@ from infrastructure.repository.test_category import TestCategoryRepository
 
 router = APIRouter(prefix="/lab_tests", tags=["Lab Tests"])
 
-@router.get('/',status_code=status.HTTP_200_OK, response_model=List[Lab_TestDTO])
+@router.get('',status_code=status.HTTP_200_OK, response_model=List[Lab_TestDTO])
 def get_all_lab_tests(test_category_id: Optional[int] = None,repo=Depends(TestCategoryRepository)):
     return TestCategoryService(repo).getAllLabTestByOpTestCategoryId(test_category_id)
 

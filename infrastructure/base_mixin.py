@@ -17,10 +17,10 @@ class BaseMixin:
         return Column(Integer,index=True)
     @declared_attr
     def created_user(cls):
-        return relationship('User', primaryjoin=lambda: User.id==foreign(cls.created_user_id))
+        return relationship('User', primaryjoin=lambda: User.id==foreign(cls.created_user_id),uselist=False)
     @declared_attr
     def updated_user(cls):
-        return relationship('User', primaryjoin=lambda: User.id==foreign(cls.updated_user_id))
+        return relationship('User', primaryjoin=lambda: User.id==foreign(cls.updated_user_id),uselist=False)
 
     def create_stamp(self, user:User):
         self.created_user_id = user.id

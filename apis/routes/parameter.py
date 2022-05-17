@@ -9,7 +9,7 @@ from infrastructure.repository.test_category import TestCategoryRepository
 
 router = APIRouter(prefix="/parameters", tags=["Parameters"])
 
-@router.get('/',status_code=status.HTTP_200_OK, response_model=List[ParameterDTO])
+@router.get('',status_code=status.HTTP_200_OK, response_model=List[ParameterDTO])
 def get_all_parameters(lab_test_id: Optional[int] = None, repo=Depends(TestCategoryRepository)):
     return TestCategoryService(repo).getAllParameterByLabTestId(lab_test_id)
 
