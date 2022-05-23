@@ -7,8 +7,8 @@ class Parameter_Range(BaseModel):
     id : int
     parameter_id : Optional[int] = None
     # parameter : Optional[Parameter] = None
-    lower_limit : Optional[int] = None
-    upper_limit : Optional[int] = None
+    lower_limit : Optional[float] = None
+    upper_limit : Optional[float] = None
     low_remark : Optional[str] = None
     high_remark : Optional[str] = None
     normal_remark : Optional[str] = None
