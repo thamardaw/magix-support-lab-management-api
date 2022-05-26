@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Float, String, Integer
 from sqlalchemy.sql.schema import ForeignKey
 from infrastructure.base_mixin import BaseMixin
 from infrastructure.base_class import Base
@@ -10,6 +10,6 @@ class Lab_Result(BaseMixin,Base):
     parameter_id = Column(Integer,index=True)
     unit = Column(String)
     result = Column(String)
-    upper_limit = Column(Integer)
-    lower_limit = Column(Integer)
+    upper_limit = Column(Float)
+    lower_limit = Column(Float)
     remark = Column(String)  
