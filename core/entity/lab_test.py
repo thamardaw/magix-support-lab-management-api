@@ -8,6 +8,7 @@ class Lab_Test(BaseModel):
     name : str
     test_category_id : Optional[int] = None
     test_category_ : Optional[Test_Category] = None
+    test_category_name : Optional[str] = None
     created_time: Optional[datetime] = None
     updated_time: Optional[datetime] = None
     created_user_id: Optional[int] = None
