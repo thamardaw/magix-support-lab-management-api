@@ -31,8 +31,8 @@ class Settings:
         DATABASE_URL_ALEMBIC = DATABASE_URL_ALEMBIC.replace("postgres://", "postgresql://", 1)
 
     #JWT
-    SECRET_KEY : str = os.getenv("SECRET_KEY")
-    ALGORITHM : str = os.getenv("ALGORITHM")
+    SECRET_KEY : str = os.getenv("SECRET_KEY") or "skjsadfklsajfaj"
+    ALGORITHM : str = os.getenv("ALGORITHM") or "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES = 60
     REFRESH_TOKEN_EXPIRE_MINUTES = 1440
 
