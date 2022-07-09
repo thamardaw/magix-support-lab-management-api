@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Enum
+from sqlalchemy import Column,  String, Date, Enum
 from infrastructure.base_mixin import BaseMixin
 from infrastructure.base_class import Base
 import enum
@@ -8,9 +8,10 @@ class gender_enum(str, enum.Enum):
     female = "female"
 
 class Patient(BaseMixin,Base):
+    patient_id = Column(String,nullable=True)
     name = Column(String, nullable=False)
     gender = Column(Enum(gender_enum), nullable=False)
     date_of_birth = Column(Date, nullable=True)
-    age = Column(Integer, nullable=False)
+    age = Column(String, nullable=False)
     address = Column(String, nullable=False)
     contact_details = Column(String, nullable=False)
