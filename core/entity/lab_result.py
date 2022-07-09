@@ -1,17 +1,20 @@
 from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
+from .lab_test import Lab_Test
 
 class Lab_Result(BaseModel):
     id : int
     lab_report_id : Optional[int] = None
     parameter_name : Optional[str] = None
-    test_name : Optional[int] = None
+    test_name : Optional[str] = None
+    test_id: Optional[int] = None
+    test: Optional[Lab_Test] = None
     parameter_id : Optional[int] = None
     unit : Optional[str] = None
     result : Optional[str] = None
-    upper_limit : Optional[int] = None
-    lower_limit : Optional[int] = None
+    upper_limit : Optional[float] = None
+    lower_limit : Optional[float] = None
     remark : Optional[str] = None
     created_time: Optional[datetime] = None
     updated_time: Optional[datetime] = None
