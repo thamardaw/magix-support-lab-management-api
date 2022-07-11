@@ -7,8 +7,8 @@ load_dotenv(dotenv_path=env_path)
 
 class Settings:
     #APP
-    PROJECT_NAME : str = "Magix Support Lab"
-    PROJECT_VERSION : str = "1.0.0"
+    PROJECT_NAME : str = "Genesis"
+    PROJECT_VERSION : str = "1.0.1"
 
     #DB
     #if your username password contains special characters, you will have to use URI escapes.

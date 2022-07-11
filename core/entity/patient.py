@@ -6,10 +6,11 @@ from infrastructure.models.patient import gender_enum
 
 class Patient(BaseModel):
     id: int
+    patient_id: Optional[str] = None
     name: str
     gender: gender_enum
     date_of_birth: Optional[date] = None 
-    age: int
+    age: str
     address: str
     contact_details: Optional[str] = None
     created_time: Optional[datetime] = None
