@@ -26,4 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: jasoniv/kdm-lab-api:latest
+          tags: |
+            jasoniv/kdm-lab-api:latest
+            jasoniv/atd-lab-api:latest
+
