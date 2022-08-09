@@ -16,6 +16,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Deploying to Heroku
+        # More details available at:
+        # https://github.com/akhileshns/heroku-deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "magix-support-lab-management"
+          heroku_email: "aungkokothet@thamardaw.com"
+      - name: Run migration
+        run: heroku run alembic upgrade head -a magix-support-lab-management # run migration
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
